@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | LuxEstate – Speak With Our Luxury Property Advisors</title>
+  <meta name="description" content="Get in touch with LuxEstate's international property advisors. Book a free consultation, schedule a property viewing, or enquire about any of our luxury listings.">
+  <meta name="keywords" content="contact real estate agent, luxury property consultation, book property viewing, Dubai real estate contact, property inquiry UAE">
+  <link rel="canonical" href="https://www.luxestate.com/contact.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .office-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+      height: 100%;
+      border-top: 3px solid transparent;
+    }
+    .office-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+      border-top-color: var(--gold);
+    }
+    .office-flag {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .office-city {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .office-country {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .office-detail {
+      font-size: 0.85rem;
+      color: #555;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .office-detail i { color: var(--gold); margin-top: 2px; min-width: 14px; font-size: 0.8rem; }
+
+    .contact-form-wrap {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 50px;
+      box-shadow: var(--shadow-hover);
+    }
+    @media (max-width: 576px) {
+      .contact-form-wrap { padding: 28px 20px; }
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--grey-light);
+    }
+    .faq-question {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
+      transition: color var(--transition);
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon {
+      width: 28px; height: 28px;
+      border: 1.5px solid var(--grey-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      transition: all var(--transition);
+      color: var(--grey-mid);
+    }
+    .faq-item.open .faq-icon { background: var(--gold); border-color: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.8;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 88px;
+      right: 32px;
+      z-index: 9997;
+      width: 52px; height: 52px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all var(--transition);
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.5); color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Lux<span>Estate</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="#inquiry">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1600&q=80');"></div>
+  <div class="container page-hero-content">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Contact Us</li>
+      </ol>
+    </nav>
+    <h1 class="mt-2">Get In <span style="color:var(--gold);">Touch</span></h1>
+    <p style="color:rgba(255,255,255,0.7);max-width:540px;margin-top:12px;">Our international advisory team is ready to guide your real estate investment journey — wherever you are in the world.</p>
+  </div>
+</section>
+
+<!-- QUICK CONTACT BAND -->
+<div style="background:var(--navy);padding:0;">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-md-4" style="border-right:1px solid rgba(255,255,255,0.08);">
+        <a href="tel:+97145550100" style="display:flex;align-items:center;gap:16px;padding:26px 28px;color:inherit;text-decoration:none;transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+          <div style="width:46px;height:46px;border:1.5px solid rgba(200,169,106,0.4);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0;">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:3px;">Call Us</div>
+            <div style="font-size:0.95rem;font-weight:500;color:#fff;">+971 4 555 0100</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4" style="border-right:1px solid rgba(255,255,255,0.08);">
+        <a href="mailto:invest@luxestate.com" style="display:flex;align-items:center;gap:16px;padding:26px 28px;color:inherit;text-decoration:none;transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+          <div style="width:46px;height:46px;border:1.5px solid rgba(200,169,106,0.4);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0;">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:3px;">Email Us</div>
+            <div style="font-size:0.95rem;font-weight:500;color:#fff;">invest@luxestate.com</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div style="display:flex;align-items:center;gap:16px;padding:26px 28px;">
+          <div style="width:46px;height:46px;border:1.5px solid rgba(200,169,106,0.4);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0;">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:3px;">Working Hours</div>
+            <div style="font-size:0.95rem;font-weight:500;color:#fff;">Mon–Sat: 9AM – 7PM GST</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="section-pad" id="inquiry">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- LEFT: Info -->
+      <div class="col-lg-5" data-aos="fade-right">
+        <span class="section-label">Let's Connect</span>
+        <h2 class="section-title">Book Your Free <span>Consultation</span></h2>
+        <hr class="divider-gold">
+        <p class="mb-5">Whether you're a first-time investor or an experienced portfolio builder, our advisors will craft a personalised strategy aligned to your goals, timeline, and budget — at no cost and no obligation.</p>
+
+        <!-- Contact Info Items -->
+        <div class="contact-info-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <strong style="font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:4px;">Head Office</strong>
+            <span style="font-size:0.88rem;color:#555;">One Marina Boulevard, Level 32<br>Dubai Marina, Dubai, UAE 12345</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item" data-aos="fade-up" data-aos-delay="50">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <strong style="font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:4px;">Phone</strong>
+            <span style="font-size:0.88rem;color:#555;">+971 4 555 0100 (UAE)<br>+44 20 7946 0100 (UK)</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <strong style="font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:4px;">Email</strong>
+            <span style="font-size:0.88rem;color:#555;">invest@luxestate.com<br>info@luxestate.com</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <strong style="font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:4px;">WhatsApp</strong>
+            <a href="https://wa.me/97145550100" style="font-size:0.88rem;color:#25D366;font-weight:500;">+971 4 555 0100</a>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="mt-4" data-aos="fade-up" data-aos-delay="200">
+          <strong style="font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:14px;">Follow Us</strong>
+          <div style="display:flex;gap:10px;">
+            <a href="#" aria-label="Facebook" style="width:40px;height:40px;border:1.5px solid var(--grey-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='var(--navy)';this.style.borderColor='var(--navy)';this.style.color='#fff'" onmouseout="this.style.background='';this.style.borderColor='var(--grey-light)';this.style.color='var(--charcoal)'"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="width:40px;height:40px;border:1.5px solid var(--grey-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='var(--navy)';this.style.borderColor='var(--navy)';this.style.color='#fff'" onmouseout="this.style.background='';this.style.borderColor='var(--grey-light)';this.style.color='var(--charcoal)'"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" style="width:40px;height:40px;border:1.5px solid var(--grey-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='var(--navy)';this.style.borderColor='var(--navy)';this.style.color='#fff'" onmouseout="this.style.background='';this.style.borderColor='var(--grey-light)';this.style.color='var(--charcoal)'"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" style="width:40px;height:40px;border:1.5px solid var(--grey-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='var(--navy)';this.style.borderColor='var(--navy)';this.style.color='#fff'" onmouseout="this.style.background='';this.style.borderColor='var(--grey-light)';this.style.color='var(--charcoal)'"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="contact-form-wrap">
+          <h3 style="color:var(--navy);font-family:var(--font-display);font-size:1.7rem;margin-bottom:6px;">Send Us a <span style="color:var(--gold);">Message</span></h3>
+          <p style="color:var(--grey-mid);font-size:0.88rem;margin-bottom:32px;">Our team responds to all inquiries within 2 business hours.</p>
+
+          <form class="needs-validate" novalidate>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-control" placeholder="First name" required>
+                <div class="invalid-feedback">Please enter your first name.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-control" placeholder="Last name" required>
+                <div class="invalid-feedback">Please enter your last name.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-control" placeholder="your@email.com" required>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone / WhatsApp *</label>
+                <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required>
+                <div class="invalid-feedback">Please enter your phone number.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Country of Residence</label>
+                <select class="form-select">
+                  <option value="">Select country...</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>India</option>
+                  <option>Pakistan</option>
+                  <option>Saudi Arabia</option>
+                  <option>Russia</option>
+                  <option>China</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Australia</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">I'm Interested In</label>
+                <select class="form-select">
+                  <option>Buying a Property</option>
+                  <option>Investment Advisory</option>
+                  <option>Off-Plan Projects</option>
+                  <option>Selling a Property</option>
+                  <option>Property Management</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Budget Range</label>
+                <select class="form-select">
+                  <option>Select budget...</option>
+                  <option>Under $500K</option>
+                  <option>$500K – $1M</option>
+                  <option>$1M – $3M</option>
+                  <option>$3M – $10M</option>
+                  <option>$10M+</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Preferred Contact Method</label>
+                <select class="form-select">
+                  <option>Email</option>
+                  <option>Phone Call</option>
+                  <option>WhatsApp</option>
+                  <option>Video Call</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Your Message *</label>
+                <textarea class="form-control" rows="5" placeholder="Tell us about your requirements — preferred locations, property type, timeline, or any specific questions..." required></textarea>
+                <div class="invalid-feedback">Please enter your message.</div>
+              </div>
+              <div class="col-12">
+                <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.82rem;color:#666;margin-bottom:8px;">
+                  <input type="checkbox" id="privacyConsent" style="margin-top:3px;accent-color:var(--gold);">
+                  <label for="privacyConsent">I agree to LuxEstate's <a href="#" style="color:var(--gold);">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-gold" style="padding:16px 48px;font-size:0.85rem;">
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+                <p style="font-size:0.75rem;color:var(--grey-mid);margin-top:12px;"><i class="fas fa-lock me-1"></i>Your information is 100% secure and never shared.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAP -->
+<div style="height:440px;overflow:hidden;" data-aos="fade-up">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57829.9!2d55.1!3d25.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b5a5a5a5a5a%3A0x0!2sDubai+Marina!5e0!3m2!1sen!2sae!4v1635000000000!5m2!1sen!2sae"
+    width="100%" height="440" style="border:0;display:block;filter:grayscale(20%);" allowfullscreen="" loading="lazy"
+    title="LuxEstate office location map Dubai Marina">
+  </iframe>
+</div>
+
+<!-- GLOBAL OFFICES -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-7" data-aos="fade-up">
+        <span class="section-label">Global Presence</span>
+        <h2 class="section-title">Our <span>Offices</span></h2>
+        <hr class="divider-gold center">
+        <p>With offices in strategic financial capitals, our team is always within reach — wherever you are in the world.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="office-card">
+          <span class="office-flag">🇦🇪</span>
+          <div class="office-city">Dubai</div>
+          <div class="office-country">United Arab Emirates</div>
+          <div class="office-detail"><i class="fas fa-map-marker-alt"></i>One Marina Boulevard, Level 32, Dubai Marina</div>
+          <div class="office-detail"><i class="fas fa-phone-alt"></i>+971 4 555 0100</div>
+          <div class="office-detail"><i class="fas fa-envelope"></i>dubai@luxestate.com</div>
+          <div class="office-detail"><i class="fas fa-clock"></i>Sun–Thu: 9AM–7PM GST</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="office-card">
+          <span class="office-flag">🇬🇧</span>
+          <div class="office-city">London</div>
+          <div class="office-country">United Kingdom</div>
+          <div class="office-detail"><i class="fas fa-map-marker-alt"></i>22 Grosvenor Square, Mayfair, London W1K 6LF</div>
+          <div class="office-detail"><i class="fas fa-phone-alt"></i>+44 20 7946 0100</div>
+          <div class="office-detail"><i class="fas fa-envelope"></i>london@luxestate.com</div>
+          <div class="office-detail"><i class="fas fa-clock"></i>Mon–Fri: 9AM–6PM GMT</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="office-card">
+          <span class="office-flag">🇸🇬</span>
+          <div class="office-city">Singapore</div>
+          <div class="office-country">Singapore</div>
+          <div class="office-detail"><i class="fas fa-map-marker-alt"></i>1 Raffles Place, Tower 2, Level 18, Singapore 048616</div>
+          <div class="office-detail"><i class="fas fa-phone-alt"></i>+65 6789 0100</div>
+          <div class="office-detail"><i class="fas fa-envelope"></i>singapore@luxestate.com</div>
+          <div class="office-detail"><i class="fas fa-clock"></i>Mon–Fri: 9AM–6PM SGT</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="office-card">
+          <span class="office-flag">🇸🇦</span>
+          <div class="office-city">Riyadh</div>
+          <div class="office-country">Saudi Arabia</div>
+          <div class="office-detail"><i class="fas fa-map-marker-alt"></i>King Fahd Road, Al Olaya Tower, Level 22, Riyadh</div>
+          <div class="office-detail"><i class="fas fa-phone-alt"></i>+966 11 555 0100</div>
+          <div class="office-detail"><i class="fas fa-envelope"></i>riyadh@luxestate.com</div>
+          <div class="office-detail"><i class="fas fa-clock"></i>Sun–Thu: 9AM–6PM AST</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section-pad" style="background:linear-gradient(135deg,#f0f3f6,#e8ecf0);">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-7 text-center" data-aos="fade-up">
+        <span class="section-label">Common Questions</span>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <hr class="divider-gold center">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="fade-up">
+
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can foreigners buy property in Dubai?</span>
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            Yes, foreigners can purchase property in designated freehold areas in Dubai with full ownership rights. Popular freehold zones include Dubai Marina, Downtown Dubai, Palm Jumeirah, Business Bay, and DIFC. Our team handles all legal documentation and DLD registration processes on your behalf.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What is the minimum investment for UAE Golden Visa through property?</span>
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            As of 2024, you can qualify for a 10-year UAE Golden Visa by investing a minimum of AED 2 million (~$545,000 USD) in real estate. The property can be mortgaged, but your equity must meet the threshold. Our advisors can identify qualifying properties and guide you through the entire visa application process.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What fees are involved when buying property in the UAE?</span>
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            Standard buying costs in Dubai include: Dubai Land Department (DLD) transfer fee of 4%, a registration trustee fee (~AED 4,000), and agent commission of 2%. For off-plan properties, the DLD fee is often 0–2% as developers sometimes cover this. We provide a full cost breakdown before you commit to any transaction.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Do I need to be present in Dubai to complete the purchase?</span>
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            No — many of our international clients complete purchases remotely. We facilitate virtual property tours, digital document signing (Power of Attorney), and remote DLD registration. You can own your Dubai property without a single flight, though we always welcome in-person visits for major decisions.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What rental yields can I expect from Dubai investment properties?</span>
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            Dubai offers some of the world's highest rental yields — typically 5–9% annually depending on location and property type. There is no income tax, capital gains tax, or property tax in the UAE. Furnished short-term rentals on platforms like Airbnb can achieve 10–15% yields in prime locations. Our investment team provides detailed ROI projections for every property.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can LuxEstate help with property management after purchase?</span>
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            Absolutely. Our Property Management division handles tenant sourcing, lease management, maintenance coordination, and financial reporting. We offer full management packages starting from 5% of annual rental income — ensuring your asset performs without any day-to-day involvement from you.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container text-center position-relative" data-aos="fade-up">
+    <span class="section-label d-block mb-3">Start Today</span>
+    <h2 style="color:#fff;font-size:clamp(1.9rem,3.5vw,2.8rem);max-width:620px;margin:0 auto 20px;">
+      Your Dream Property is One <span style="color:var(--gold);">Conversation Away</span>
+    </h2>
+    <p style="color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 32px;">No pressure, no obligation. Just expert advice tailored to your investment goals.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#inquiry" class="btn-gold">Book Free Consultation</a>
+      <a href="tel:+97145550100" class="btn-outline-white"><i class="fas fa-phone me-2"></i>Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo">Lux<span>Estate</span></div>
+        <p class="footer-tagline">The world's most exclusive real estate advisory, connecting discerning investors with extraordinary properties across the globe since 2006.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Property Types</div>
+        <ul class="footer-links">
+          <li><a href="properties.html">Luxury Apartments</a></li>
+          <li><a href="properties.html">Premium Villas</a></li>
+          <li><a href="properties.html">Penthouses</a></li>
+          <li><a href="properties.html">Townhouses</a></li>
+          <li><a href="properties.html">Off-Plan Projects</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>One Marina Boulevard, Level 32<br>Dubai, UAE</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+971 4 555 0100</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>invest@luxestate.com</span></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9:00 AM – 7:00 PM GST</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <span style="font-size:0.8rem;">&copy; 2025 LuxEstate. All Rights Reserved.</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Privacy Policy</a>
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Terms of Service</a>
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/97145550100" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 60 });</script>
+<script src="js/main.js"></script>
+<script>
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

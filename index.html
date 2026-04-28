@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxEstate | Premium International Real Estate & Luxury Properties</title>
+  <meta name="description" content="Discover world-class luxury properties, premium apartments, and exclusive villas with LuxEstate. Your trusted global real estate investment partner since 2005.">
+  <meta name="keywords" content="luxury real estate, premium apartments, luxury villas, investment property, international real estate, buy property, real estate investment">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="LuxEstate | Premium International Real Estate">
+  <meta property="og:description" content="Discover world-class luxury properties and exclusive investment opportunities worldwide.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.luxestate.com/">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "LuxEstate",
+    "url": "https://www.luxestate.com",
+    "logo": "https://www.luxestate.com/images/logo.png",
+    "description": "Premium international real estate – luxury apartments, villas, and investment properties.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "One Marina Boulevard, Level 32",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "telephone": "+971-4-555-0100",
+    "sameAs": [
+      "https://www.facebook.com/luxestate",
+      "https://www.instagram.com/luxestate",
+      "https://www.linkedin.com/company/luxestate"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Lux<span>Estate</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html#inquiry">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero-section" style="min-height:100vh;display:flex;align-items:center;">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80');"></div>
+  <div class="hero-overlay"></div>
+  <!-- Decorative gold line -->
+  <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--gold) 0%,transparent 100%);z-index:3;"></div>
+
+  <div class="container hero-content py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <span class="section-label animate-fadeUp" style="color:var(--gold-light);">Premium International Real Estate</span>
+        <h1 class="text-white mb-4 animate-fadeUp animate-delay-1" style="font-weight:300;">
+          Your Gateway to <br><span style="color:var(--gold);font-weight:700;">Luxury Living</span>
+        </h1>
+        <p class="text-white mb-5 animate-fadeUp animate-delay-2" style="font-size:1.08rem;opacity:0.85;max-width:520px;line-height:1.85;">
+          From iconic skyline apartments to serene waterfront villas — we curate the world's most exclusive properties for discerning global investors.
+        </p>
+        <div class="d-flex gap-3 flex-wrap animate-fadeUp animate-delay-3">
+          <a href="properties.html" class="btn-gold">Explore Properties</a>
+          <a href="contact.html#inquiry" class="btn-outline-white">Book Consultation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="row mt-5 animate-fadeUp animate-delay-4">
+      <div class="col-lg-10">
+        <div class="hero-search-bar">
+          <i class="fas fa-search text-secondary ms-2"></i>
+          <input type="text" class="form-control" placeholder="Search location, project or community...">
+          <div class="search-divider d-none d-md-block"></div>
+          <select class="form-select" style="max-width:160px;">
+            <option>Property Type</option>
+            <option>Apartment</option>
+            <option>Villa</option>
+            <option>Penthouse</option>
+            <option>Townhouse</option>
+          </select>
+          <div class="search-divider d-none d-md-block"></div>
+          <select class="form-select" style="max-width:150px;">
+            <option>Price Range</option>
+            <option>$500K – $1M</option>
+            <option>$1M – $3M</option>
+            <option>$3M – $10M</option>
+            <option>$10M+</option>
+          </select>
+          <button class="btn-gold" style="white-space:nowrap;padding:12px 28px;">
+            <i class="fas fa-search me-2"></i>Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:3;text-align:center;">
+    <div style="width:1px;height:52px;background:linear-gradient(180deg,transparent,var(--gold));margin:0 auto 8px;"></div>
+    <span style="font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);">Scroll</span>
+  </div>
+</section>
+
+<!-- ========== STATS BAND ========== -->
+<section style="background:var(--navy);padding:50px 0;">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3 border-end" style="border-color:rgba(255,255,255,0.1)!important;">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="850" data-suffix="+">0</span>
+          <span class="stat-label">Properties Sold</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 border-end d-none d-md-block" style="border-color:rgba(255,255,255,0.1)!important;">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="120" data-suffix="+">0</span>
+          <span class="stat-label">Luxury Projects</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 border-end" style="border-color:rgba(255,255,255,0.1)!important;">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="2400" data-suffix="+">0</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="18" data-suffix="">0</span>
+          <span class="stat-label">Years of Excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED PROPERTIES ========== -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-between align-items-end mb-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-label">Exclusive Portfolio</span>
+        <h2 class="section-title">Featured <span>Properties</span></h2>
+        <hr class="divider-gold">
+        <p>Handpicked luxury properties from the world's most prestigious addresses — curated for investors who demand the extraordinary.</p>
+      </div>
+      <div class="col-lg-auto" data-aos="fade-left">
+        <a href="properties.html" class="btn-outline-gold">View All Properties</a>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Luxury beachfront villa in Dubai Marina">
+            <span class="property-badge">Featured</span>
+            <div class="property-card-overlay">
+              <a href="property-details.html" class="btn-gold">View Details</a>
+            </div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$4,200,000</div>
+            <h3 class="property-title">Marina Skyline Penthouse</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Dubai Marina, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 3 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 3,800 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80" alt="Modern luxury apartment with pool">
+            <span class="property-badge new">New</span>
+            <div class="property-card-overlay">
+              <a href="property-details.html" class="btn-gold">View Details</a>
+            </div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$2,800,000</div>
+            <h3 class="property-title">Palm Garden Residence</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Palm Jumeirah, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 2,600 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Waterfront luxury villa">
+            <span class="property-badge" style="background:var(--navy);">Investment</span>
+            <div class="property-card-overlay">
+              <a href="property-details.html" class="btn-gold">View Details</a>
+            </div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$6,500,000</div>
+            <h3 class="property-title">Azure Waterfront Villa</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Jumeirah Bay, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 5 Beds</span>
+              <span><i class="fas fa-bath"></i> 5 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 7,200 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section-pad" style="background:linear-gradient(135deg,#f0f3f6 0%,#e8ecf0 100%);">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-7" data-aos="fade-up">
+        <span class="section-label">Our Advantage</span>
+        <h2 class="section-title">Why <span>LuxEstate</span>?</h2>
+        <hr class="divider-gold center">
+        <p>We combine global market intelligence with deeply personalised service — ensuring every client finds not just a property, but a legacy asset.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="feature-block text-center p-4">
+          <div class="feature-icon-box mx-auto"><i class="fas fa-globe"></i></div>
+          <h4 class="mb-3">Global Reach</h4>
+          <p style="font-size:0.9rem;">Access to premium properties across 30+ countries with our international network of partners.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-block text-center p-4">
+          <div class="feature-icon-box mx-auto"><i class="fas fa-shield-alt"></i></div>
+          <h4 class="mb-3">Trusted & Secure</h4>
+          <p style="font-size:0.9rem;">18 years of industry excellence with transparent processes and legally verified properties.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-block text-center p-4">
+          <div class="feature-icon-box mx-auto"><i class="fas fa-chart-line"></i></div>
+          <h4 class="mb-3">ROI Focused</h4>
+          <p style="font-size:0.9rem;">Expert investment advisory ensuring your capital delivers premium returns in high-growth markets.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-block text-center p-4">
+          <div class="feature-icon-box mx-auto"><i class="fas fa-headset"></i></div>
+          <h4 class="mb-3">24/7 Concierge</h4>
+          <p style="font-size:0.9rem;">Dedicated relationship managers available round the clock to guide your investment journey.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED PROJECTS ========== -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-between align-items-end mb-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-label">Signature Developments</span>
+        <h2 class="section-title">Our <span>Projects</span></h2>
+        <hr class="divider-gold">
+        <p>Landmark developments redefining urban luxury across the globe's most coveted destinations.</p>
+      </div>
+      <div class="col-auto" data-aos="fade-left">
+        <a href="projects.html" class="btn-outline-gold">All Projects</a>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Horizon Tower luxury residential project Dubai">
+          <div class="project-card-info">
+            <div class="project-status">● Ongoing</div>
+            <h3 class="project-card-title">Horizon Tower</h3>
+            <p class="project-card-sub">Dubai Marina, UAE · 320 Units · Handover Q4 2025</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="project-card" style="height:155px;">
+              <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Pearl Island Residences waterfront project">
+              <div class="project-card-info">
+                <div class="project-status">● Completed</div>
+                <h3 class="project-card-title" style="font-size:1.1rem;">Pearl Island Residences</h3>
+                <p class="project-card-sub" style="font-size:0.76rem;">Abu Dhabi, UAE · 180 Units</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="project-card" style="height:155px;">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Golden Gate Villas luxury project">
+              <div class="project-card-info">
+                <div class="project-status">● Ongoing</div>
+                <h3 class="project-card-title" style="font-size:1.1rem;">Golden Gate Villas</h3>
+                <p class="project-card-sub" style="font-size:0.76rem;">Riyadh, Saudi Arabia · 56 Villas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section-pad" style="background:var(--navy);">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-7" data-aos="fade-up">
+        <span class="section-label">Client Stories</span>
+        <h2 class="section-title" style="color:#fff;">Trusted by <span>Global Investors</span></h2>
+        <hr class="divider-gold center">
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"LuxEstate helped me identify a high-yield penthouse in Dubai Marina before the market surged. The ROI exceeded all projections. Truly world-class guidance."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Hartwell investor testimonial">
+            <div>
+              <div class="testimonial-author-name">James Hartwell</div>
+              <div class="testimonial-author-title">Private Investor, London</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"From shortlisting to handover, every step was seamless. Our villa in Palm Jumeirah surpassed every expectation — both in quality and in appreciation."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Nair client testimonial">
+            <div>
+              <div class="testimonial-author-name">Priya Nair</div>
+              <div class="testimonial-author-title">Tech Executive, Singapore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The team at LuxEstate understood our family's lifestyle requirements perfectly. We found a home that blends luxury with genuine comfort. Exceptional service."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Omar Al-Rashid testimonial">
+            <div>
+              <div class="testimonial-author-name">Omar Al-Rashid</div>
+              <div class="testimonial-author-title">Entrepreneur, Riyadh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LATEST INSIGHTS ========== -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-between align-items-end mb-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-label">Market Intelligence</span>
+        <h2 class="section-title">Latest <span>Insights</span></h2>
+        <hr class="divider-gold">
+      </div>
+      <div class="col-auto" data-aos="fade-left">
+        <a href="blog.html" class="btn-outline-gold">View All Articles</a>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Dubai real estate market trends 2024">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>December 2024</span><span>Market Trends</span></div>
+            <h3 class="blog-card-title">Dubai Real Estate Outlook: Why 2025 Is the Year to Invest</h3>
+            <p class="blog-card-excerpt">With record transaction volumes and new global connectivity infrastructure, Dubai's luxury market shows no signs of cooling.</p>
+            <a href="blog.html" class="blog-read-more">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Off-plan property investment guide">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>November 2024</span><span>Investment Guide</span></div>
+            <h3 class="blog-card-title">Off-Plan vs Ready Property: A Complete Investor's Guide</h3>
+            <p class="blog-card-excerpt">Understanding the strategic advantages of each approach can make or break your real estate portfolio performance.</p>
+            <a href="blog.html" class="blog-read-more">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=80" alt="Luxury villa interior design trends">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>October 2024</span><span>Lifestyle</span></div>
+            <h3 class="blog-card-title">The New Language of Luxury: What Ultra-HNW Buyers Want in 2025</h3>
+            <p class="blog-card-excerpt">Privacy, biophilic design, and smart-home integration are redefining what "luxury" means in the world's premium markets.</p>
+            <a href="blog.html" class="blog-read-more">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BANNER ========== -->
+<section class="cta-banner">
+  <div class="container text-center position-relative" data-aos="fade-up">
+    <span class="section-label d-block mb-3">Start Your Journey</span>
+    <h2 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);max-width:700px;margin:0 auto 20px;">
+      Ready to Own Your <span style="color:var(--gold);">Dream Property</span>?
+    </h2>
+    <p style="color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 36px;font-size:1rem;">
+      Schedule a private consultation with our international property advisors — completely free, completely confidential.
+    </p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="contact.html#inquiry" class="btn-gold">Book Free Consultation</a>
+      <a href="properties.html" class="btn-outline-white">Browse Properties</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo">Lux<span>Estate</span></div>
+        <p class="footer-tagline">The world's most exclusive real estate advisory, connecting discerning investors with extraordinary properties across the globe since 2006.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Property Types</div>
+        <ul class="footer-links">
+          <li><a href="properties.html">Luxury Apartments</a></li>
+          <li><a href="properties.html">Premium Villas</a></li>
+          <li><a href="properties.html">Penthouses</a></li>
+          <li><a href="properties.html">Townhouses</a></li>
+          <li><a href="properties.html">Off-Plan Projects</a></li>
+          <li><a href="properties.html">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>One Marina Boulevard, Level 32<br>Dubai, United Arab Emirates</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>+971 4 555 0100</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>invest@luxestate.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-clock"></i>
+          <span>Mon – Sat: 9:00 AM – 7:00 PM GST</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <span style="font-size:0.8rem;">&copy; 2025 LuxEstate. All Rights Reserved.</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Privacy Policy</a>
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Terms of Service</a>
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 60 });</script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body>
+</html>

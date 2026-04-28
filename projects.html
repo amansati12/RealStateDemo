@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | LuxEstate – Landmark Luxury Real Estate Developments</title>
+  <meta name="description" content="Explore LuxEstate's signature real estate projects — ongoing and completed landmark developments across UAE, Saudi Arabia and beyond. Investment-grade luxury developments.">
+  <meta name="keywords" content="luxury real estate projects UAE, ongoing real estate development, completed luxury projects, off-plan property Dubai, landmark developments">
+  <link rel="canonical" href="https://www.luxestate.com/projects.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-filter-btn {
+      background: transparent;
+      border: 1.5px solid var(--grey-light);
+      color: var(--charcoal);
+      padding: 10px 28px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-body);
+    }
+    .project-filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .project-filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    .project-detail-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+    }
+    .project-detail-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-5px); }
+    .project-detail-img {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    .project-detail-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .project-detail-card:hover .project-detail-img img { transform: scale(1.06); }
+    .project-detail-body { padding: 28px; }
+    .project-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--grey-light);
+    }
+    .project-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.8rem;
+      color: var(--grey-mid);
+    }
+    .project-meta-item i { color: var(--gold); }
+    .progress-bar-custom {
+      height: 4px;
+      background: var(--grey-light);
+      border-radius: 2px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+      border-radius: 2px;
+      transition: width 1.5s ease;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--grey-mid);
+      margin-top: 5px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 36px;
+      padding-bottom: 36px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 10px; top: 10px; bottom: 0;
+      width: 1px;
+      background: var(--grey-light);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-dot {
+      position: absolute;
+      left: 0; top: 6px;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-dot.completed { background: #1a7a4a; box-shadow: 0 0 0 2px #1a7a4a; }
+    .timeline-dot.upcoming { background: var(--grey-light); box-shadow: 0 0 0 2px #ccc; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Lux<span>Estate</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+        <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html#inquiry">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80');"></div>
+  <div class="container page-hero-content">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Projects</li>
+      </ol>
+    </nav>
+    <h1 class="mt-2">Signature <span style="color:var(--gold);">Projects</span></h1>
+    <p style="color:rgba(255,255,255,0.7);max-width:540px;margin-top:12px;">Landmark developments redefining luxury living across the world's most coveted addresses.</p>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div style="background:var(--navy);padding:40px 0;">
+  <div class="container">
+    <div class="row g-0 text-center">
+      <div class="col-6 col-md-3 border-end" style="border-color:rgba(255,255,255,0.1)!important;">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="120" data-suffix="+">0</span>
+          <span class="stat-label">Total Projects</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 border-end" style="border-color:rgba(255,255,255,0.1)!important;">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="28" data-suffix="">0</span>
+          <span class="stat-label">Ongoing</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 border-end" style="border-color:rgba(255,255,255,0.1)!important;">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="92" data-suffix="">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-block">
+          <span class="stat-number" data-counter="14" data-suffix="">0</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER + PROJECTS GRID -->
+<section class="section-pad">
+  <div class="container">
+
+    <!-- Filter Buttons -->
+    <div class="d-flex flex-wrap gap-3 justify-content-center mb-5" data-aos="fade-up">
+      <button class="project-filter-btn active" data-filter="all">All Projects</button>
+      <button class="project-filter-btn" data-filter="ongoing">Ongoing</button>
+      <button class="project-filter-btn" data-filter="completed">Completed</button>
+      <button class="project-filter-btn" data-filter="upcoming">Upcoming</button>
+    </div>
+
+    <!-- ONGOING PROJECTS -->
+    <div class="mb-5" data-aos="fade-up">
+      <span class="section-label">Currently Under Development</span>
+      <h2 class="section-title mb-4">Ongoing <span>Projects</span></h2>
+      <hr class="divider-gold">
+    </div>
+
+    <div class="row g-4 mb-5">
+
+      <!-- Project 1 – Horizon Tower -->
+      <div class="col-lg-6" data-category="ongoing" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-detail-card">
+          <div class="project-detail-img">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Horizon Tower luxury residential development Dubai Marina">
+            <div style="position:absolute;top:16px;left:16px;">
+              <span style="background:#e67e22;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px;">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-detail-body">
+            <h3 style="color:var(--navy);font-family:var(--font-display);font-size:1.5rem;margin-bottom:6px;">Horizon Tower</h3>
+            <p style="color:var(--gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Dubai Marina, UAE</p>
+            <p style="font-size:0.9rem;color:#555;line-height:1.7;">A 60-storey residential landmark offering 320 premium units ranging from 1–5 bedrooms, sky villas, and duplex penthouses with unobstructed marina views. Designed by Foster + Partners.</p>
+            <div style="margin:16px 0 8px;">
+              <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--grey-mid);margin-bottom:6px;">
+                <span>Construction Progress</span><span style="color:var(--gold);font-weight:600;">72%</span>
+              </div>
+              <div class="progress-bar-custom">
+                <div class="progress-fill" style="width:72%;"></div>
+              </div>
+            </div>
+            <div class="project-meta-row">
+              <div class="project-meta-item"><i class="fas fa-building"></i> 60 Floors</div>
+              <div class="project-meta-item"><i class="fas fa-home"></i> 320 Units</div>
+              <div class="project-meta-item"><i class="fas fa-calendar"></i> Handover Q4 2025</div>
+              <div class="project-meta-item"><i class="fas fa-tag"></i> From $850K</div>
+            </div>
+            <div class="mt-4 d-flex gap-3">
+              <a href="contact.html#inquiry" class="btn-gold" style="font-size:0.78rem;padding:10px 24px;">Register Interest</a>
+              <a href="contact.html" class="btn-outline-gold" style="font-size:0.78rem;padding:10px 24px;">Get Brochure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 – Golden Gate Villas -->
+      <div class="col-lg-6" data-category="ongoing" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-detail-card">
+          <div class="project-detail-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Golden Gate Villas luxury development Riyadh Saudi Arabia">
+            <div style="position:absolute;top:16px;left:16px;">
+              <span style="background:#e67e22;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px;">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-detail-body">
+            <h3 style="color:var(--navy);font-family:var(--font-display);font-size:1.5rem;margin-bottom:6px;">Golden Gate Villas</h3>
+            <p style="color:var(--gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Riyadh, Saudi Arabia</p>
+            <p style="font-size:0.9rem;color:#555;line-height:1.7;">56 ultra-luxury standalone villas nestled within a private gated enclave. Each villa features private pool, home theatre, staff quarters, and smart home integration across 7,000–14,000 sq ft.</p>
+            <div style="margin:16px 0 8px;">
+              <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--grey-mid);margin-bottom:6px;">
+                <span>Construction Progress</span><span style="color:var(--gold);font-weight:600;">45%</span>
+              </div>
+              <div class="progress-bar-custom">
+                <div class="progress-fill" style="width:45%;"></div>
+              </div>
+            </div>
+            <div class="project-meta-row">
+              <div class="project-meta-item"><i class="fas fa-home"></i> 56 Villas</div>
+              <div class="project-meta-item"><i class="fas fa-vector-square"></i> 7,000–14,000 sqft</div>
+              <div class="project-meta-item"><i class="fas fa-calendar"></i> Handover Q2 2026</div>
+              <div class="project-meta-item"><i class="fas fa-tag"></i> From $3.2M</div>
+            </div>
+            <div class="mt-4 d-flex gap-3">
+              <a href="contact.html#inquiry" class="btn-gold" style="font-size:0.78rem;padding:10px 24px;">Register Interest</a>
+              <a href="contact.html" class="btn-outline-gold" style="font-size:0.78rem;padding:10px 24px;">Get Brochure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 – Sapphire Residences -->
+      <div class="col-lg-6" data-category="ongoing" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-detail-card">
+          <div class="project-detail-img">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80" alt="Sapphire Residences luxury apartment development">
+            <div style="position:absolute;top:16px;left:16px;">
+              <span style="background:#e67e22;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px;">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-detail-body">
+            <h3 style="color:var(--navy);font-family:var(--font-display);font-size:1.5rem;margin-bottom:6px;">Sapphire Residences</h3>
+            <p style="color:var(--gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Downtown Dubai, UAE</p>
+            <p style="font-size:0.9rem;color:#555;line-height:1.7;">180 meticulously crafted apartments in the heart of Downtown Dubai. Studios to 3-bedroom units with Burj Khalifa views, curated interiors, and a sky terrace on level 42 with infinity pool.</p>
+            <div style="margin:16px 0 8px;">
+              <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--grey-mid);margin-bottom:6px;">
+                <span>Construction Progress</span><span style="color:var(--gold);font-weight:600;">88%</span>
+              </div>
+              <div class="progress-bar-custom">
+                <div class="progress-fill" style="width:88%;"></div>
+              </div>
+            </div>
+            <div class="project-meta-row">
+              <div class="project-meta-item"><i class="fas fa-building"></i> 45 Floors</div>
+              <div class="project-meta-item"><i class="fas fa-home"></i> 180 Units</div>
+              <div class="project-meta-item"><i class="fas fa-calendar"></i> Handover Q1 2025</div>
+              <div class="project-meta-item"><i class="fas fa-tag"></i> From $520K</div>
+            </div>
+            <div class="mt-4 d-flex gap-3">
+              <a href="contact.html#inquiry" class="btn-gold" style="font-size:0.78rem;padding:10px 24px;">Register Interest</a>
+              <a href="contact.html" class="btn-outline-gold" style="font-size:0.78rem;padding:10px 24px;">Get Brochure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 – Ocean Breeze Townhomes -->
+      <div class="col-lg-6" data-category="ongoing" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-detail-card">
+          <div class="project-detail-img">
+            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="Ocean Breeze Townhomes luxury development">
+            <div style="position:absolute;top:16px;left:16px;">
+              <span style="background:#e67e22;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px;">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-detail-body">
+            <h3 style="color:var(--navy);font-family:var(--font-display);font-size:1.5rem;margin-bottom:6px;">Ocean Breeze Townhomes</h3>
+            <p style="color:var(--gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Yas Island, Abu Dhabi, UAE</p>
+            <p style="font-size:0.9rem;color:#555;line-height:1.7;">84 premium townhomes on the shores of Yas Island, offering 4–5 bedroom configurations with private gardens, direct beach access, and a championship golf course on the doorstep.</p>
+            <div style="margin:16px 0 8px;">
+              <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--grey-mid);margin-bottom:6px;">
+                <span>Construction Progress</span><span style="color:var(--gold);font-weight:600;">31%</span>
+              </div>
+              <div class="progress-bar-custom">
+                <div class="progress-fill" style="width:31%;"></div>
+              </div>
+            </div>
+            <div class="project-meta-row">
+              <div class="project-meta-item"><i class="fas fa-home"></i> 84 Townhomes</div>
+              <div class="project-meta-item"><i class="fas fa-vector-square"></i> 3,200–5,500 sqft</div>
+              <div class="project-meta-item"><i class="fas fa-calendar"></i> Handover Q3 2026</div>
+              <div class="project-meta-item"><i class="fas fa-tag"></i> From $1.8M</div>
+            </div>
+            <div class="mt-4 d-flex gap-3">
+              <a href="contact.html#inquiry" class="btn-gold" style="font-size:0.78rem;padding:10px 24px;">Register Interest</a>
+              <a href="contact.html" class="btn-outline-gold" style="font-size:0.78rem;padding:10px 24px;">Get Brochure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMPLETED PROJECTS HEADING -->
+    <div class="mb-5 mt-3" data-aos="fade-up">
+      <span class="section-label">Delivered With Excellence</span>
+      <h2 class="section-title mb-4">Completed <span>Projects</span></h2>
+      <hr class="divider-gold">
+    </div>
+
+    <!-- Completed Projects Grid (visual cards) -->
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6" data-category="completed" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-card" style="height:300px;">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80" alt="Pearl Island Residences completed luxury project Abu Dhabi">
+          <div class="project-card-info">
+            <div class="project-status" style="color:#27ae60;">✓ Completed 2023</div>
+            <h3 class="project-card-title">Pearl Island Residences</h3>
+            <p class="project-card-sub">Abu Dhabi, UAE · 180 Units · $480M Value</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="completed" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card" style="height:300px;">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80" alt="The Palms Estate completed luxury project completed">
+          <div class="project-card-info">
+            <div class="project-status" style="color:#27ae60;">✓ Completed 2022</div>
+            <h3 class="project-card-title">The Palms Estate</h3>
+            <p class="project-card-sub">Palm Jumeirah, UAE · 96 Villas · $1.1B Value</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="completed" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card" style="height:300px;">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80" alt="Crown Heights Tower completed luxury development">
+          <div class="project-card-info">
+            <div class="project-status" style="color:#27ae60;">✓ Completed 2022</div>
+            <h3 class="project-card-title">Crown Heights Tower</h3>
+            <p class="project-card-sub">Business Bay, UAE · 240 Units · $310M Value</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="completed" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-card" style="height:300px;">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80" alt="Marina Bay Suites completed luxury project">
+          <div class="project-card-info">
+            <div class="project-status" style="color:#27ae60;">✓ Completed 2021</div>
+            <h3 class="project-card-title">Marina Bay Suites</h3>
+            <p class="project-card-sub">Dubai Marina, UAE · 150 Units · $220M Value</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="completed" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card" style="height:300px;">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80" alt="Riviera Gardens completed luxury development">
+          <div class="project-card-info">
+            <div class="project-status" style="color:#27ae60;">✓ Completed 2020</div>
+            <h3 class="project-card-title">Riviera Gardens</h3>
+            <p class="project-card-sub">MBR City, UAE · 72 Townhomes · $190M Value</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-category="completed" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card" style="height:300px;">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Azure Coast Villas completed luxury project">
+          <div class="project-card-info">
+            <div class="project-status" style="color:#27ae60;">✓ Completed 2019</div>
+            <h3 class="project-card-title">Azure Coast Villas</h3>
+            <p class="project-card-sub">Jumeirah Bay, UAE · 28 Villas · $420M Value</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPMENT PROCESS TIMELINE -->
+<section class="section-pad" style="background:var(--navy);">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-7" data-aos="fade-up">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title" style="color:#fff;">Our Development <span>Process</span></h2>
+        <hr class="divider-gold center">
+        <p style="color:rgba(255,255,255,0.65);">Every LuxEstate project follows a rigorous quality-led development journey.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="timeline-dot completed"></div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:24px;">
+            <h4 style="color:var(--gold);font-size:1rem;margin-bottom:6px;">01 · Site Acquisition & Due Diligence</h4>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin:0;">Rigorous legal, environmental, and geotechnical analysis. Only prime locations with proven appreciation potential are selected.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+          <div class="timeline-dot completed"></div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:24px;">
+            <h4 style="color:var(--gold);font-size:1rem;margin-bottom:6px;">02 · Concept & Master Planning</h4>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin:0;">Collaboration with world-renowned architects and interior designers to create landmark developments that set new benchmarks for luxury.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot completed"></div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:24px;">
+            <h4 style="color:var(--gold);font-size:1rem;margin-bottom:6px;">03 · Launch & Pre-Sales</h4>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin:0;">Exclusive launch events for registered investors. Early-bird pricing and payment plans offered before public launch.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="timeline-dot"></div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(200,169,106,0.3);border-radius:var(--radius);padding:24px;">
+            <h4 style="color:var(--gold);font-size:1rem;margin-bottom:6px;">04 · Construction & Quality Oversight</h4>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin:0;">On-site quality control teams ensure every detail is executed to the highest standard. Regular investor progress reports provided.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot upcoming"></div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px;">
+            <h4 style="color:rgba(255,255,255,0.6);font-size:1rem;margin-bottom:6px;">05 · Handover & After-Sales Service</h4>
+            <p style="color:rgba(255,255,255,0.5);font-size:0.88rem;margin:0;">Seamless unit handover with full snagging support. Ongoing property management, rental, and resale advisory services available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container text-center position-relative" data-aos="fade-up">
+    <span class="section-label d-block mb-3">Invest Early</span>
+    <h2 style="color:#fff;font-size:clamp(1.9rem,3.5vw,2.8rem);max-width:620px;margin:0 auto 20px;">
+      Register for <span style="color:var(--gold);">Priority Access</span> to New Projects
+    </h2>
+    <p style="color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 32px;">Be the first to know about upcoming launches, pre-release pricing, and exclusive investment opportunities.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="contact.html#inquiry" class="btn-gold">Register Now</a>
+      <a href="contact.html" class="btn-outline-white">Talk to an Advisor</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo">Lux<span>Estate</span></div>
+        <p class="footer-tagline">The world's most exclusive real estate advisory, connecting discerning investors with extraordinary properties.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Property Types</div>
+        <ul class="footer-links">
+          <li><a href="properties.html">Luxury Apartments</a></li>
+          <li><a href="properties.html">Premium Villas</a></li>
+          <li><a href="properties.html">Penthouses</a></li>
+          <li><a href="properties.html">Off-Plan Projects</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>One Marina Boulevard, Level 32<br>Dubai, UAE</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+971 4 555 0100</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>invest@luxestate.com</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0"><span style="font-size:0.8rem;">&copy; 2025 LuxEstate. All Rights Reserved.</span></div>
+        <div class="col-md-6 text-center text-md-end"><a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Privacy Policy</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 60 });</script>
+<script src="js/main.js"></script>
+<script>
+  // Project filter
+  document.querySelectorAll('.project-filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.project-filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  // Animate progress bars on scroll
+  const fills = document.querySelectorAll('.progress-fill');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.style.width;
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  fills.forEach(f => { const w = f.style.width; f.style.width = '0'; setTimeout(() => f.style.width = w, 300); obs.observe(f); });
+</script>
+</body>
+</html>

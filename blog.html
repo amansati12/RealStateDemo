@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Blog | LuxEstate – Real Estate Market Intelligence</title>
+  <meta name="description" content="Stay ahead with LuxEstate's expert real estate insights — market trends, investment guides, luxury property news, and exclusive analysis for global investors.">
+  <meta name="keywords" content="real estate blog, luxury property insights, Dubai real estate market, property investment guide, real estate market trends, luxury property news">
+  <link rel="canonical" href="https://www.luxestate.com/blog.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .blog-category-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+    .badge-trend { background: rgba(200,169,106,0.12); color: var(--gold-dark); }
+    .badge-invest { background: rgba(11,28,44,0.08); color: var(--navy); }
+    .badge-lifestyle { background: rgba(27,94,32,0.08); color: #1b5e20; }
+    .badge-guide { background: rgba(74,20,140,0.08); color: #4a148c; }
+
+    .featured-blog-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 500px;
+      box-shadow: var(--shadow-hover);
+    }
+    .featured-blog-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .featured-blog-card:hover img { transform: scale(1.04); }
+    .featured-blog-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(11,28,44,0.92) 0%, rgba(11,28,44,0.3) 60%, transparent 100%);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .blog-card-full {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      background: #fff;
+      display: flex;
+      transition: all var(--transition);
+    }
+    .blog-card-full:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .blog-card-full-img {
+      width: 200px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .blog-card-full-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .blog-card-full:hover .blog-card-full-img img { transform: scale(1.06); }
+    .blog-card-full-body { padding: 24px; }
+    @media (max-width: 576px) {
+      .blog-card-full { flex-direction: column; }
+      .blog-card-full-img { width: 100%; height: 180px; }
+    }
+    .sidebar-widget {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 28px;
+    }
+    .sidebar-widget-title {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .sidebar-recent-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--grey-light);
+    }
+    .sidebar-recent-item:last-child { border-bottom: none; }
+    .sidebar-recent-img {
+      width: 70px; height: 60px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .sidebar-recent-img img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar-recent-title { font-size: 0.85rem; color: var(--navy); font-weight: 500; line-height: 1.4; margin-bottom: 4px; }
+    .sidebar-recent-date { font-size: 0.75rem; color: var(--grey-mid); }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-pill {
+      font-size: 0.75rem;
+      padding: 6px 14px;
+      border: 1px solid var(--grey-light);
+      border-radius: 20px;
+      color: var(--charcoal);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .tag-pill:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .pagination-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--grey-light);
+      background: transparent;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pagination-btn:hover, .pagination-btn.active {
+      background: var(--navy); border-color: var(--navy); color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Lux<span>Estate</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" href="blog.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html#inquiry">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80');"></div>
+  <div class="container page-hero-content">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Insights & Blog</li>
+      </ol>
+    </nav>
+    <h1 class="mt-2">Market <span style="color:var(--gold);">Insights</span></h1>
+    <p style="color:rgba(255,255,255,0.7);max-width:540px;margin-top:12px;">Expert analysis, investment guides, and luxury real estate intelligence from our advisory team.</p>
+  </div>
+</section>
+
+<!-- CATEGORY NAV -->
+<div style="background:#fff;border-bottom:1px solid var(--grey-light);padding:16px 0;">
+  <div class="container">
+    <div class="d-flex gap-3 flex-wrap align-items-center justify-content-between">
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding:6px 0;border-bottom:2px solid var(--gold);">All Articles</a>
+        <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--grey-mid);padding:6px 16px;transition:color 0.3s;" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--grey-mid)'">Market Trends</a>
+        <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--grey-mid);padding:6px 16px;transition:color 0.3s;" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--grey-mid)'">Investment Guides</a>
+        <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--grey-mid);padding:6px 16px;transition:color 0.3s;" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--grey-mid)'">Lifestyle</a>
+        <a href="#" style="font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--grey-mid);padding:6px 16px;transition:color 0.3s;" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--grey-mid)'">Developer News</a>
+      </div>
+      <div style="position:relative;">
+        <i class="fas fa-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--grey-mid);font-size:0.8rem;"></i>
+        <input type="text" placeholder="Search articles..." style="border:1px solid var(--grey-light);border-radius:20px;padding:8px 16px 8px 34px;font-size:0.83rem;width:220px;outline:none;font-family:var(--font-body);">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- LEFT: Blog Posts -->
+      <div class="col-lg-8">
+
+        <!-- FEATURED POST -->
+        <div data-aos="fade-up" class="mb-5">
+          <div class="featured-blog-card">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&q=80" alt="Dubai real estate investment outlook 2025 featured article">
+            <div class="featured-blog-overlay">
+              <span class="blog-category-badge badge-trend" style="background:rgba(200,169,106,0.2);color:var(--gold-light);">Market Trends</span>
+              <h2 style="color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:12px;line-height:1.3;">Dubai Real Estate Outlook: Why 2025 Is the Year to Invest</h2>
+              <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--gold);">
+                <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;">By <strong>James Hartwell</strong> · December 18, 2024</span>
+                <span style="color:rgba(255,255,255,0.5);font-size:0.78rem;"><i class="fas fa-clock me-1"></i>8 min read</span>
+              </div>
+              <p style="color:rgba(255,255,255,0.72);font-size:0.9rem;margin:14px 0 20px;line-height:1.75;max-width:600px;">With record transaction volumes, new global connectivity infrastructure, and landmark policy tailwinds, Dubai's luxury property market is entering its most dynamic cycle in a decade.</p>
+              <a href="#" class="btn-gold" style="font-size:0.78rem;padding:10px 26px;">Read Full Article <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARTICLE LIST -->
+        <div class="mb-4" data-aos="fade-up">
+          <div class="blog-card-full">
+            <div class="blog-card-full-img">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Off-plan vs ready property investment comparison guide">
+            </div>
+            <div class="blog-card-full-body">
+              <span class="blog-category-badge badge-invest">Investment Guide</span>
+              <h3 class="blog-card-title" style="font-size:1.15rem;">Off-Plan vs Ready Property: A Complete Investor's Guide</h3>
+              <p class="blog-card-excerpt">Understanding the strategic advantages of each approach can make or break your real estate portfolio performance in today's competitive market.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                <div style="font-size:0.75rem;color:var(--grey-mid);"><i class="fas fa-user me-1"></i>Sophia Laurent &nbsp;·&nbsp; Nov 28, 2024 &nbsp;·&nbsp; <i class="fas fa-clock me-1"></i>6 min</div>
+                <a href="#" class="blog-read-more" style="font-size:0.75rem;">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="blog-card-full">
+            <div class="blog-card-full-img">
+              <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=400&q=80" alt="Ultra high net worth luxury property design trends 2025">
+            </div>
+            <div class="blog-card-full-body">
+              <span class="blog-category-badge badge-lifestyle">Lifestyle</span>
+              <h3 class="blog-card-title" style="font-size:1.15rem;">The New Language of Luxury: What Ultra-HNW Buyers Want in 2025</h3>
+              <p class="blog-card-excerpt">Privacy, biophilic design, and smart-home integration are redefining what "luxury" means in the world's premium real estate markets.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                <div style="font-size:0.75rem;color:var(--grey-mid);"><i class="fas fa-user me-1"></i>Ananya Patel &nbsp;·&nbsp; Oct 15, 2024 &nbsp;·&nbsp; <i class="fas fa-clock me-1"></i>5 min</div>
+                <a href="#" class="blog-read-more" style="font-size:0.75rem;">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="blog-card-full">
+            <div class="blog-card-full-img">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" alt="Golden Visa UAE real estate property investment guide">
+            </div>
+            <div class="blog-card-full-body">
+              <span class="blog-category-badge badge-invest">Investment Guide</span>
+              <h3 class="blog-card-title" style="font-size:1.15rem;">UAE Golden Visa Through Real Estate: Everything You Need to Know</h3>
+              <p class="blog-card-excerpt">A step-by-step guide to securing UAE residency by property investment — eligibility criteria, minimum thresholds, and the application process explained.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                <div style="font-size:0.75rem;color:var(--grey-mid);"><i class="fas fa-user me-1"></i>Khalid Al Mansoori &nbsp;·&nbsp; Oct 3, 2024 &nbsp;·&nbsp; <i class="fas fa-clock me-1"></i>9 min</div>
+                <a href="#" class="blog-read-more" style="font-size:0.75rem;">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="blog-card-full">
+            <div class="blog-card-full-img">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80" alt="Palm Jumeirah property market analysis 2024">
+            </div>
+            <div class="blog-card-full-body">
+              <span class="blog-category-badge badge-trend">Market Trends</span>
+              <h3 class="blog-card-title" style="font-size:1.15rem;">Palm Jumeirah Property Market: 2024 Performance and 2025 Outlook</h3>
+              <p class="blog-card-excerpt">Transactions on Palm Jumeirah reached a record high in 2024. We analyse what's driving demand and where smart money is moving in 2025.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                <div style="font-size:0.75rem;color:var(--grey-mid);"><i class="fas fa-user me-1"></i>James Hartwell &nbsp;·&nbsp; Sep 22, 2024 &nbsp;·&nbsp; <i class="fas fa-clock me-1"></i>7 min</div>
+                <a href="#" class="blog-read-more" style="font-size:0.75rem;">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="blog-card-full">
+            <div class="blog-card-full-img">
+              <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=80" alt="Riyadh Saudi Arabia real estate investment opportunities">
+            </div>
+            <div class="blog-card-full-body">
+              <span class="blog-category-badge badge-trend">Market Trends</span>
+              <h3 class="blog-card-title" style="font-size:1.15rem;">Riyadh Rising: Why Saudi Arabia's Capital Is the GCC's Hottest Investment Market</h3>
+              <p class="blog-card-excerpt">Vision 2030 megaprojects, a growing expat community, and surging demand for premium residential stock are creating a once-in-a-generation opportunity.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                <div style="font-size:0.75rem;color:var(--grey-mid);"><i class="fas fa-user me-1"></i>Khalid Al Mansoori &nbsp;·&nbsp; Sep 5, 2024 &nbsp;·&nbsp; <i class="fas fa-clock me-1"></i>6 min</div>
+                <a href="#" class="blog-read-more" style="font-size:0.75rem;">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="250">
+          <div class="blog-card-full">
+            <div class="blog-card-full-img">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Buying luxury property in UAE as foreigner complete guide">
+            </div>
+            <div class="blog-card-full-body">
+              <span class="blog-category-badge badge-guide">Buyer's Guide</span>
+              <h3 class="blog-card-title" style="font-size:1.15rem;">Foreigner's Complete Guide to Buying Property in the UAE</h3>
+              <p class="blog-card-excerpt">From freehold zones to DLD registration, transfer fees, and mortgage options — everything an international buyer needs to navigate UAE property ownership confidently.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                <div style="font-size:0.75rem;color:var(--grey-mid);"><i class="fas fa-user me-1"></i>Sophia Laurent &nbsp;·&nbsp; Aug 18, 2024 &nbsp;·&nbsp; <i class="fas fa-clock me-1"></i>11 min</div>
+                <a href="#" class="blog-read-more" style="font-size:0.75rem;">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="d-flex gap-2 align-items-center mt-5" data-aos="fade-up">
+          <button class="pagination-btn"><i class="fas fa-chevron-left" style="font-size:0.75rem;"></i></button>
+          <button class="pagination-btn active">1</button>
+          <button class="pagination-btn">2</button>
+          <button class="pagination-btn">3</button>
+          <span style="color:var(--grey-mid);font-size:0.85rem;padding:0 4px;">···</span>
+          <button class="pagination-btn">8</button>
+          <button class="pagination-btn"><i class="fas fa-chevron-right" style="font-size:0.75rem;"></i></button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <div class="col-lg-4">
+
+        <!-- Newsletter Widget -->
+        <div style="background:var(--navy);border-radius:var(--radius);padding:32px;margin-bottom:28px;" data-aos="fade-left">
+          <span class="section-label">Stay Informed</span>
+          <h3 style="color:#fff;font-size:1.3rem;margin-bottom:10px;">Get Market <span style="color:var(--gold);">Intelligence</span></h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:20px;">Join 12,000+ investors receiving our weekly real estate briefing.</p>
+          <input type="email" class="form-control mb-3" placeholder="Your email address" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;">
+          <button class="btn-gold w-100" style="font-size:0.78rem;"><i class="fas fa-paper-plane me-2"></i>Subscribe Free</button>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);text-align:center;margin-top:10px;">No spam. Unsubscribe anytime.</p>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="50">
+          <div class="sidebar-widget-title">Recent Articles</div>
+          <div class="sidebar-recent-item">
+            <div class="sidebar-recent-img">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&q=70" alt="Off-plan vs ready property article thumbnail">
+            </div>
+            <div>
+              <div class="sidebar-recent-title">Off-Plan vs Ready Property: A Complete Guide</div>
+              <div class="sidebar-recent-date">Nov 28, 2024</div>
+            </div>
+          </div>
+          <div class="sidebar-recent-item">
+            <div class="sidebar-recent-img">
+              <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=200&q=70" alt="Luxury property design trends article thumbnail">
+            </div>
+            <div>
+              <div class="sidebar-recent-title">The New Language of Luxury: 2025 Buyer Preferences</div>
+              <div class="sidebar-recent-date">Oct 15, 2024</div>
+            </div>
+          </div>
+          <div class="sidebar-recent-item">
+            <div class="sidebar-recent-img">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=200&q=70" alt="UAE Golden Visa article thumbnail">
+            </div>
+            <div>
+              <div class="sidebar-recent-title">UAE Golden Visa Through Real Estate — Full Guide</div>
+              <div class="sidebar-recent-date">Oct 3, 2024</div>
+            </div>
+          </div>
+          <div class="sidebar-recent-item">
+            <div class="sidebar-recent-img">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&q=70" alt="Palm Jumeirah market article thumbnail">
+            </div>
+            <div>
+              <div class="sidebar-recent-title">Palm Jumeirah: 2024 Performance & 2025 Outlook</div>
+              <div class="sidebar-recent-date">Sep 22, 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
+          <div class="sidebar-widget-title">Categories</div>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--grey-light);font-size:0.88rem;">
+              <a href="#" style="color:var(--charcoal);transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--charcoal)'">Market Trends</a>
+              <span style="background:var(--navy);color:#fff;font-size:0.7rem;padding:2px 10px;border-radius:10px;">18</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--grey-light);font-size:0.88rem;">
+              <a href="#" style="color:var(--charcoal);transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--charcoal)'">Investment Guides</a>
+              <span style="background:var(--navy);color:#fff;font-size:0.7rem;padding:2px 10px;border-radius:10px;">24</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--grey-light);font-size:0.88rem;">
+              <a href="#" style="color:var(--charcoal);transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--charcoal)'">Lifestyle</a>
+              <span style="background:var(--navy);color:#fff;font-size:0.7rem;padding:2px 10px;border-radius:10px;">11</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--grey-light);font-size:0.88rem;">
+              <a href="#" style="color:var(--charcoal);transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--charcoal)'">Developer News</a>
+              <span style="background:var(--navy);color:#fff;font-size:0.7rem;padding:2px 10px;border-radius:10px;">9</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:10px 0;font-size:0.88rem;">
+              <a href="#" style="color:var(--charcoal);transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--charcoal)'">Buyer's Guides</a>
+              <span style="background:var(--navy);color:#fff;font-size:0.7rem;padding:2px 10px;border-radius:10px;">14</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="150">
+          <div class="sidebar-widget-title">Popular Tags</div>
+          <div class="tag-cloud">
+            <a href="#" class="tag-pill">Dubai Real Estate</a>
+            <a href="#" class="tag-pill">Investment</a>
+            <a href="#" class="tag-pill">Luxury Villas</a>
+            <a href="#" class="tag-pill">Off-Plan</a>
+            <a href="#" class="tag-pill">Golden Visa</a>
+            <a href="#" class="tag-pill">UAE Property</a>
+            <a href="#" class="tag-pill">Market Trends</a>
+            <a href="#" class="tag-pill">Penthouses</a>
+            <a href="#" class="tag-pill">Saudi Arabia</a>
+            <a href="#" class="tag-pill">ROI</a>
+            <a href="#" class="tag-pill">Property Tips</a>
+          </div>
+        </div>
+
+        <!-- CTA Box -->
+        <div style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));border-radius:var(--radius);padding:32px;text-align:center;" data-aos="fade-left" data-aos-delay="200">
+          <i class="fas fa-phone-volume" style="font-size:2.2rem;color:#fff;opacity:0.85;margin-bottom:14px;display:block;"></i>
+          <h4 style="color:#fff;font-size:1.1rem;margin-bottom:10px;">Ready to Invest?</h4>
+          <p style="color:rgba(255,255,255,0.85);font-size:0.82rem;margin-bottom:20px;">Speak with a luxury property specialist for free personalised advice.</p>
+          <a href="contact.html#inquiry" class="btn-outline-white d-block text-center" style="font-size:0.78rem;">Book Free Consultation</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo">Lux<span>Estate</span></div>
+        <p class="footer-tagline">The world's most exclusive real estate advisory, connecting discerning investors with extraordinary properties across the globe.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Blog Topics</div>
+        <ul class="footer-links">
+          <li><a href="#">Market Trends</a></li>
+          <li><a href="#">Investment Guides</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Developer News</a></li>
+          <li><a href="#">Buyer's Guides</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>One Marina Boulevard, Level 32<br>Dubai, UAE</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+971 4 555 0100</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>invest@luxestate.com</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0"><span style="font-size:0.8rem;">&copy; 2025 LuxEstate. All Rights Reserved.</span></div>
+        <div class="col-md-6 text-center text-md-end"><a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Privacy Policy</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 60 });</script>
+<script src="js/main.js"></script>
+</body>
+</html>

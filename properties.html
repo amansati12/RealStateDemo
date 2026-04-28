@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Properties | LuxEstate – Premium Apartments, Villas & Penthouses</title>
+  <meta name="description" content="Browse LuxEstate's exclusive portfolio of luxury apartments, premium villas, penthouses, and investment properties across UAE, Saudi Arabia and beyond.">
+  <meta name="keywords" content="luxury apartments Dubai, premium villas UAE, penthouses for sale, investment property, real estate listings, luxury real estate portfolio">
+  <link rel="canonical" href="https://www.luxestate.com/properties.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--grey-light);
+      color: var(--charcoal);
+      padding: 9px 22px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-body);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+    .filter-btn.active { background: var(--gold); border-color: var(--gold); }
+    .sort-select {
+      border: 1px solid var(--grey-light);
+      padding: 9px 16px;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--charcoal);
+      background: #fff;
+      cursor: pointer;
+    }
+    .results-count { font-size: 0.85rem; color: var(--grey-mid); }
+    .load-more-wrap { padding: 50px 0 10px; text-align: center; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Lux<span>Estate</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="properties.html">Properties</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html#inquiry">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80');"></div>
+  <div class="container page-hero-content">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Properties</li>
+      </ol>
+    </nav>
+    <h1 class="mt-2">Luxury <span style="color:var(--gold);">Properties</span></h1>
+    <p style="color:rgba(255,255,255,0.7);max-width:520px;margin-top:12px;">Exclusive portfolio of premium real estate across the world's most prestigious destinations.</p>
+  </div>
+</section>
+
+<!-- SEARCH & FILTER BAR -->
+<div style="background:#fff;border-bottom:1px solid var(--grey-light);padding:20px 0;position:sticky;top:72px;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.06);">
+  <div class="container">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-4">
+        <div style="position:relative;">
+          <i class="fas fa-search" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--grey-mid);font-size:0.85rem;"></i>
+          <input type="text" class="form-control" placeholder="Search location or property..." style="padding-left:38px;">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <select class="form-select sort-select">
+          <option>Property Type</option>
+          <option>Apartment</option>
+          <option>Villa</option>
+          <option>Penthouse</option>
+          <option>Townhouse</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select class="form-select sort-select">
+          <option>Price Range</option>
+          <option>Under $1M</option>
+          <option>$1M – $3M</option>
+          <option>$3M – $10M</option>
+          <option>$10M+</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select class="form-select sort-select">
+          <option>Bedrooms</option>
+          <option>1 Bed</option>
+          <option>2 Beds</option>
+          <option>3 Beds</option>
+          <option>4+ Beds</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button class="btn-gold w-100" style="padding:11px 20px;"><i class="fas fa-filter me-2"></i>Filter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROPERTIES GRID -->
+<section class="section-pad">
+  <div class="container">
+    <!-- Category Tabs -->
+    <div class="d-flex flex-wrap gap-3 mb-4 align-items-center justify-content-between">
+      <div class="d-flex flex-wrap gap-2">
+        <button class="filter-btn active" data-filter="all">All Properties</button>
+        <button class="filter-btn" data-filter="apartment">Apartments</button>
+        <button class="filter-btn" data-filter="villa">Villas</button>
+        <button class="filter-btn" data-filter="penthouse">Penthouses</button>
+        <button class="filter-btn" data-filter="townhouse">Townhouses</button>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span class="results-count">Showing <strong>12</strong> properties</span>
+        <select class="sort-select">
+          <option>Sort: Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest First</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Property 1 -->
+      <div class="col-lg-4 col-md-6" data-category="penthouse" data-aos="fade-up" data-aos-delay="0">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Marina Skyline Penthouse Dubai luxury property">
+            <span class="property-badge">Featured</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$4,200,000</div>
+            <h3 class="property-title">Marina Skyline Penthouse</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Dubai Marina, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 3 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 3,800 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 2 -->
+      <div class="col-lg-4 col-md-6" data-category="apartment" data-aos="fade-up" data-aos-delay="100">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80" alt="Palm Garden Residence luxury apartment">
+            <span class="property-badge new">New</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$2,800,000</div>
+            <h3 class="property-title">Palm Garden Residence</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Palm Jumeirah, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 2,600 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 3 -->
+      <div class="col-lg-4 col-md-6" data-category="villa" data-aos="fade-up" data-aos-delay="200">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Azure Waterfront Villa luxury property">
+            <span class="property-badge" style="background:var(--navy);">Investment</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$6,500,000</div>
+            <h3 class="property-title">Azure Waterfront Villa</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Jumeirah Bay, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 5 Beds</span>
+              <span><i class="fas fa-bath"></i> 5 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 7,200 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 4 -->
+      <div class="col-lg-4 col-md-6" data-category="apartment" data-aos="fade-up" data-aos-delay="0">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Downtown Prestige apartment luxury">
+            <span class="property-badge new">New</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$1,950,000</div>
+            <h3 class="property-title">Downtown Prestige Suite</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Downtown Dubai, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 2 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 1,850 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 5 -->
+      <div class="col-lg-4 col-md-6" data-category="villa" data-aos="fade-up" data-aos-delay="100">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Emerald Hills luxury villa">
+            <span class="property-badge" style="background:var(--navy);">Off-Plan</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$3,750,000</div>
+            <h3 class="property-title">Emerald Hills Villa</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>DAMAC Hills, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 4 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 5,500 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 6 -->
+      <div class="col-lg-4 col-md-6" data-category="penthouse" data-aos="fade-up" data-aos-delay="200">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=80" alt="Sky Crown penthouse luxury property">
+            <span class="property-badge">Featured</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$9,800,000</div>
+            <h3 class="property-title">Sky Crown Penthouse</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Business Bay, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 5 Beds</span>
+              <span><i class="fas fa-bath"></i> 6 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 8,400 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 7 -->
+      <div class="col-lg-4 col-md-6" data-category="townhouse" data-aos="fade-up" data-aos-delay="0">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Savannah Grove townhouse">
+            <span class="property-badge new">New</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$1,450,000</div>
+            <h3 class="property-title">Savannah Grove Townhouse</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Arabian Ranches, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 3 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 2,200 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 8 -->
+      <div class="col-lg-4 col-md-6" data-category="apartment" data-aos="fade-up" data-aos-delay="100">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Harbour View residence luxury apartment">
+            <span class="property-badge" style="background:var(--navy);">Investment</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$2,200,000</div>
+            <h3 class="property-title">Harbour View Residence</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Dubai Creek Harbour, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 2 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 2,100 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 9 -->
+      <div class="col-lg-4 col-md-6" data-category="villa" data-aos="fade-up" data-aos-delay="200">
+        <div class="property-card">
+          <div class="property-card-img">
+            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Royal Palm Villa premium property">
+            <span class="property-badge">Featured</span>
+            <div class="property-card-overlay"><a href="property-details.html" class="btn-gold">View Details</a></div>
+          </div>
+          <div class="property-card-body">
+            <div class="property-price">$12,500,000</div>
+            <h3 class="property-title">Royal Palm Signature Villa</h3>
+            <p class="property-location"><i class="fas fa-map-marker-alt"></i>Palm Jumeirah, UAE</p>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 6 Beds</span>
+              <span><i class="fas fa-bath"></i> 7 Baths</span>
+              <span><i class="fas fa-vector-square"></i> 12,000 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more-wrap" data-aos="fade-up">
+      <p class="text-muted mb-4" style="font-size:0.88rem;">Showing 9 of 48 properties</p>
+      <a href="#" class="btn-outline-gold">Load More Properties</a>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY CTA -->
+<section style="background:linear-gradient(135deg,#f0f3f6,#e8ecf0);padding:70px 0;">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7" data-aos="fade-right">
+        <span class="section-label">Can't Find Your Dream Property?</span>
+        <h2 class="section-title">Tell Us What <span>You're Looking For</span></h2>
+        <p>Our advisors have access to hundreds of off-market properties and exclusive listings not publicly advertised. Share your requirements and we'll find the perfect match.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end" data-aos="fade-left">
+        <a href="contact.html#inquiry" class="btn-gold me-3">Submit Requirement</a>
+        <a href="contact.html" class="btn-outline-gold">Talk to an Advisor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo">Lux<span>Estate</span></div>
+        <p class="footer-tagline">The world's most exclusive real estate advisory, connecting discerning investors with extraordinary properties across the globe.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Property Types</div>
+        <ul class="footer-links">
+          <li><a href="properties.html">Luxury Apartments</a></li>
+          <li><a href="properties.html">Premium Villas</a></li>
+          <li><a href="properties.html">Penthouses</a></li>
+          <li><a href="properties.html">Townhouses</a></li>
+          <li><a href="properties.html">Off-Plan</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>One Marina Boulevard, Level 32<br>Dubai, UAE</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+971 4 555 0100</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>invest@luxestate.com</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <span style="font-size:0.8rem;">&copy; 2025 LuxEstate. All Rights Reserved.</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Privacy Policy</a>
+          <a href="#" style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin:0 12px;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 60 });</script>
+<script src="js/main.js"></script>
+</body>
+</html>
